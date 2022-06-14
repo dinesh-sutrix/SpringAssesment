@@ -1,11 +1,14 @@
 package com.example.springassesment.model;
 
 
+import com.github.JanLoebel.jsonschemavalidation.JsonSchemaValidation;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@JsonSchemaValidation("person.json")
 public class Person {
     @Id @GeneratedValue
     private Long id;

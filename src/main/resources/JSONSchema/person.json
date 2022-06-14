@@ -6,7 +6,7 @@
       "type": "string",
       "minLength": 8,
       "maxLength": 50,
-      "pattern": "^[a-zA-Z ]*$"
+      "pattern": "[a-z0-9]+@[a-z]+\\.[a-z]{2,3}"
     },
     "firstName": {
       "type": "string",

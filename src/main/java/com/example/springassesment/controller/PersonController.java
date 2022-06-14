@@ -22,20 +22,25 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value="list",method = RequestMethod.GET)
     public List<Person> getAll() {
         return personService.getAllUsers();
     }
 
-    @RequestMapping(value = "{id}",method = RequestMethod.GET)
-    public List<Person> getAll(@PathVariable int id) {
-        return personService.getAllUsers(id);
+    @RequestMapping(value = "/listAboveAge/{age}",method = RequestMethod.GET)
+    public List<Person> getAll(@PathVariable String age) {
+        return personService.getAllUsers(Integer.parseInt(age));
+    }
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    public ResponseEntity<Person> getPerson(@PathVariable String id) {
+        return ResponseEntity.ok(personService.getUserById(Long.parseLong(id)));
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Person> addNewPerson(@RequestBody Person person) {
 
-     //   JsonSchemaValidator schemaValidator = JsonSchemaValidator.matchesJsonSchemaInClasspath("JSONSchema/person.schema.json");
+     //   JsonSchemaValidator schemaValidator = JsonSchemaValidator.matchesJsonSchemaInClasspath("JSONSchema/person.json");
       //  schemaValidator.matches(person);
 
     //    if(schemaValidator.matches(person)){

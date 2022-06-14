@@ -21,7 +21,7 @@ public class PersonService {
 
     public List<Person> getAllUsers(int age) {
         List<Person> persons = (List<Person>) personRepository.findAll();
-        return persons.stream().filter(person -> person.getAge() > 30).collect(Collectors.toList());
+        return persons.stream().filter(person -> person.getAge() > age).collect(Collectors.toList());
     }
 
     public List<Person> getAllUsers() {
