@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 50,
+      "pattern": "^[a-zA-Z ]*$"
+    },
+    "firstName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "pattern": "^[a-zA-Z ]*$"
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "pattern": "^[a-zA-Z ]*$"
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 18,
+      "maximum": 50,
+      "multipleOf": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": ["email","firstName","age"]
+}
