@@ -27,7 +27,7 @@ Request Body: <br>
 
 **2.2 Get Person by ID**
 
-URL : http://localhost:8080/person/<id><br>
+URL : http://localhost:8080/person/{id}<br>
 Method: GET<br>
 Sample : http://localhost:8080/person/1<br><br>
 
@@ -37,7 +37,7 @@ Sample : http://localhost:8080/person/1<br><br>
 URL : http://localhost:8080/person/list<br>
 Method: GET<br><br>
 
-URL : http://localhost:8080/person/listAboveAge/<age><br>
+URL : http://localhost:8080/person/listAboveAge/{age}<br>
 Method: GET<br>
 Sample : http://localhost:8080/person/25
 
